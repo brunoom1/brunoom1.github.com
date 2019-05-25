@@ -1,0 +1,23 @@
+{
+  "name": "meusite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sass.js",
+  "dependencies": {
+    "sass": "^1.20.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunoom1/brunoom1.github.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunoom1/brunoom1.github.com/issues"
+  },
+  "homepage": "https://github.com/brunoom1/brunoom1.github.com#readme"
+}
