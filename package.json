@@ -1,23 +1,15 @@
 {
-  "name": "meusite",
+  "name": "gabrielmendonca.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "sass.js",
-  "dependencies": {
-    "sass": "^1.20.1"
-  },
-  "devDependencies": {},
+  "source": "src/index.html",
+  "repository": "git@github.com:brunoom1/brunoom1.github.com.git",
+  "author": "Gabriel Mendonça <gabrielmendoncanf@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "parcel build",
+    "start": "parcel"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/brunoom1/brunoom1.github.com.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/brunoom1/brunoom1.github.com/issues"
-  },
-  "homepage": "https://github.com/brunoom1/brunoom1.github.com#readme"
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  }
 }

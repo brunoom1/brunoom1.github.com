@@ -1,3 +1,4 @@
-node_modules
-package-lock.json
-sass.js
+dist/
+node_modules/
+.parcel-cache
+yarn.lock
