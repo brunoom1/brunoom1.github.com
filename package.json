@@ -6,8 +6,8 @@
   "author": "Gabriel Mendonça <gabrielmendoncanf@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "parcel watch",
-    "start": "parcel"
+    "build": "parcel",
+    "start": "parcel watch"
   },
   "devDependencies": {
     "@parcel/transformer-js": "^2.8.2",
