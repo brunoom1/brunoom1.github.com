@@ -10,11 +10,20 @@
     "start": "parcel"
   },
   "devDependencies": {
+    "@parcel/transformer-js": "^2.8.2",
+    "@parcel/transformer-sass": "2.8.2",
+    "@types/bootstrap": "^5.2.6",
+    "@types/react-dom": "^18.0.9",
     "parcel": "^2.8.2"
   },
   "targets": {
     "default": {
       "distDir": "./dist"
     }
+  },
+  "dependencies": {
+    "bootstrap": "5.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
