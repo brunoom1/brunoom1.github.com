@@ -11,5 +11,10 @@
   },
   "devDependencies": {
     "parcel": "^2.8.2"
+  },
+  "targets": {
+    "default": {
+      "distDir": "./"
+    }
   }
 }
