@@ -6,7 +6,7 @@
   "author": "Gabriel Mendonça <gabrielmendoncanf@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "parcel build",
+    "build": "parcel watch",
     "start": "parcel"
   },
   "devDependencies": {
@@ -22,8 +22,10 @@
     }
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.26",
     "bootstrap": "5.2.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
   }
 }
