@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const DivContainer = styled.div`
   strong {
     font-size: 28px;
-    letter-spacing: 10px
   }
 `;
 
