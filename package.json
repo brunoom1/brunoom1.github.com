@@ -10,12 +10,11 @@
     "start": "parcel watch"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26",
-    "styled-components": "^5.3.6",
     "@parcel/transformer-js": "^2.8.2",
     "@parcel/transformer-sass": "2.8.2",
     "@types/bootstrap": "^5.2.6",
     "@types/react-dom": "^18.0.9",
+    "@types/styled-components": "^5.1.26",
     "parcel": "^2.8.2"
   },
   "targets": {
