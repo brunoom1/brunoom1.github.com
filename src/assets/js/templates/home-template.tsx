@@ -11,15 +11,13 @@ export const HomeTemplate: FC<HomeTemplateProps> = ({
 }) =>  {
   return <>
     { header && <header>
-      <div className={"container-fluid"}>
         { header }
-      </div>
     </header> }
-    { body && <div className={"container-fluid"}>
+    { body && <div>
       { body }
     </div>}
     <footer>
-      { footer && <div className={"container-fluid"}>
+      { footer && <div>
         { footer }
       </div> }
     </footer>

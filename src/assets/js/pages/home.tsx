@@ -9,7 +9,9 @@ export const Home = () => {
       <Header />
     }
     body={
-      <h1> Hello world </h1>
+      <div className={"container"}>
+        <h1> Hello world </h1>
+      </div>
     }
     footer={
       <div> footer bar </div>
