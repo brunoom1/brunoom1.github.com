@@ -1,0 +1,16 @@
+@import "./../../../sass/style.scss";
+
+.branding {
+  a {
+    text-decoration: none;
+    color: $gray-900;
+    font-size: 3rem;
+  }
+
+  span {
+    display: block;
+    font-size: 18px;
+    line-height: 4px;
+  }
+  padding: 20px 0;
+}

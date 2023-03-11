@@ -1,0 +1,48 @@
+
+.container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.iconBar {
+  border: #fff solid 0px;
+  background: #DBE3E6;
+  min-width: 40px;
+  margin-left: -42px;
+  margin-top: 30px;
+}
+
+.blockIcon {
+  border: #fff solid 0px;
+  background-color: #54B7FA;
+  width: 40px;
+  height: 40px;
+  border-bottom: solid 2px #fff;
+}
+
+.title {
+  background-color: #E8F3F9;
+  height: 40px;
+  border: #fff solid 0px;
+  border-left: solid 2px #fff;
+  max-width: 150px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.content {
+  padding-top: 30px;
+}
+
+.contentBody {
+  padding: 20px;
+}
+
+.card {
+  & > [class=card-body] {
+    background-color: #fff;
+  }
+}

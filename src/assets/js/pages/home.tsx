@@ -1,6 +1,9 @@
 import React from "react";
+import { CardPerfil } from "../components/cards/card-perfil";
 import { HomeTemplate } from "../templates/home-template"
 import { Header } from "./../components/header";
+
+import { Perfil } from "./sections/perfil";
 
 export const Home = () => {
 
@@ -9,12 +12,19 @@ export const Home = () => {
       <Header />
     }
     body={
-      <div className={"container"}>
-        <h1> Hello world </h1>
-      </div>
+      <>
+
+        <Perfil />
+        
+        <CardPerfil>
+
+        </CardPerfil>
+      </>
     }
     footer={
-      <div> footer bar </div>
+      <div className={"container"}>
+        <div> footer bar </div>
+      </div>
     }
   />
 }

@@ -106,3 +106,9 @@ $colors: (
 @import "~bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+
+body {
+  background-color: #F0F2F1 !important;
+  font-family: 'Jaldi', sans-serif;
+  font-size: 22px;
+}

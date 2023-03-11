@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 
 interface HomeTemplateProps {
   header?: ReactNode,
