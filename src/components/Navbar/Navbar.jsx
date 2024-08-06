@@ -3,17 +3,17 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../../assets/sLogo.png";
-// import Button from "react-bootstrap/Button";
-import { Link } from "react-router-dom";
-// import { CgGitFork } from "react-icons/cg";
-import {
-  // AiFillStar,
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-  AiOutlineContacts
-} from "react-icons/ai";
-import { GiSkills } from "react-icons/gi"
-import { CgFileDocument } from "react-icons/cg";
+// // import Button from "react-bootstrap/Button";
+// import { Link } from "react-router-dom";
+// // import { CgGitFork } from "react-icons/cg";
+// import {
+//   // AiFillStar,
+//   AiOutlineHome,
+//   AiOutlineFundProjectionScreen,
+//   AiOutlineContacts
+// } from "react-icons/ai";
+// import { GiSkills } from "react-icons/gi"
+// import { CgFileDocument } from "react-icons/cg";
 
 
 function NavBar() {
