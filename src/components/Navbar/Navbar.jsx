@@ -4,15 +4,22 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import logo from "../../assets/sLogo.png";
 // // import Button from "react-bootstrap/Button";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // // import { CgGitFork } from "react-icons/cg";
-// import {
-//   // AiFillStar,
-//   AiOutlineHome,
-//   AiOutlineFundProjectionScreen,
-//   AiOutlineContacts
-// } from "react-icons/ai";
-// import { GiSkills } from "react-icons/gi"
+import {
+  // AiFillStar,
+  AiOutlineHome,
+  // AiOutlineFundProjectionScreen,
+  // AiOutlineContacts
+} from "react-icons/ai";
+
+// import { 
+//   GiSkills
+// } from "react-icons/gi"
+
+import {
+  GrDocumentUser
+} from "react-icons/gr"
 // import { CgFileDocument } from "react-icons/cg";
 
 
@@ -53,8 +60,6 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            {/* 
-
             <Nav.Item>
               <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
@@ -64,14 +69,24 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
+                to="/curriculo"
+                onClick={() => updateExpanded(false)}
+              >
+                <GrDocumentUser style={{ marginBottom: "2px" }} /> Currículo
+              </Nav.Link>
+            </Nav.Item>
+
+            {/* <Nav.Item>
+              <Nav.Link
+                as={Link}
                 to="/skillset"
                 onClick={() => updateExpanded(false)}
               >
                 <GiSkills style={{ marginBottom: "2px" }} /> Skillset
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/project"
@@ -82,9 +97,9 @@ function NavBar() {
                 />{" "}
                 Projects
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/resume"
@@ -92,9 +107,9 @@ function NavBar() {
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/contact"

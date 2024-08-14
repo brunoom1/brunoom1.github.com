@@ -762,3 +762,7 @@ html {
   .fork-btn-inner::after {
     display: none !important;
   }
+
+  .curriculo section{
+    margin-bottom: 40px;
+  }
