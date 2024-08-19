@@ -37,13 +37,14 @@ jobs:
         with:
           node-version: '20.16.0'
       - run: npm install -g yarn
+      - run: cd nextjs
       - run: yarn
       - run: yarn build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: './build'
+          path: './nextjs/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
