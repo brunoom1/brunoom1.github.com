@@ -37,9 +37,8 @@ jobs:
         with:
           node-version: '20.16.0'
       - run: npm install -g yarn
-      - run: cd nextjs
-      - run: yarn
-      - run: yarn build
+      - run: cd nextjs && yarn
+      - run: cd nextjs && yarn build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
