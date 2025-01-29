@@ -1,0 +1,22 @@
+
+.container {
+  a {
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 40px;
+    color: black;
+
+    &:hover {
+      background-color: #eee;
+    }
+
+    &:last-child {
+      background-color: black;
+      color: white;
+    }
+  }
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+}

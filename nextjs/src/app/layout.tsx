@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 };
 
 import './global.css';
+import { Header } from "@/components/Header";
 
 const roboto = Roboto({
   weight: '300',
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="pt_BR">
       <body className={ roboto.className }>
         <div className="App">
+          <Header />
           {children}
         </div>  
       </body>

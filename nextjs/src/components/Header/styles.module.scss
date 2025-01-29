@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  width: 100%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.containerSuperior {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+}
