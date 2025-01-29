@@ -2,9 +2,11 @@ import { PageConstructor } from "@/components/PageConstructor";
 
 export default function Home() {
 
-  if (process.env.CONSTRUCTION ) return <PageConstructor />;
+  console.log(process.env.NEXT_PUBLIC_CONSTRUCTION)
+
+  if (process.env.NEXT_PUBLIC_CONSTRUCTION === "true" ) return <PageConstructor />;
 
   return <div>
-    <h1> develop </h1>
+    <h1> Home </h1>
   </div>
 }
