@@ -4,8 +4,6 @@ import { useEffect, useState } from 'react'
 import { parse } from "yaml";
 import { Container, Row, Card, CardBody } from "react-bootstrap";
 
-import Social from '../../components/Contact/Social';
-
 const Curriculo = () => {
 
   const curriculoYaml = 'https://raw.githubusercontent.com/brunoom1/curriculo/master/curriculo.yaml';
@@ -14,9 +12,6 @@ const Curriculo = () => {
   useEffect(() => {
     fetch(curriculoYaml).then(async result => {
       const curriculo = parse(await result.text());
-
-      console.log(curriculo);
-
       setCurriculoData(curriculo);
     });
   }, []);
@@ -84,8 +79,6 @@ const Curriculo = () => {
           </CardBody>
         </Card>
       </Row> }
-
-      <Social />
     </Container>
   )
 }
