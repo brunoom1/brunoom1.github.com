@@ -1,7 +1,10 @@
 import { PageConstructor } from "@/components/PageConstructor";
 
 export default function Home() {
+
+  if (process.env.CONSTRUCTION ) return <PageConstructor />;
+
   return <div>
-    <PageConstructor></PageConstructor>
+    <h1> develop </h1>
   </div>
 }
