@@ -1,5 +1,11 @@
+
 .container {
   padding: 100px 0;
+
+  overflow: auto;
+  scroll-snap-type: both mandatory;
+  overscroll-behavior-x: contain;
+
 }
 
 .marginTop {
@@ -19,6 +25,163 @@
 
 .techSection {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-top: 80px;
+  padding-top: 80px;
+  position: static;
+  background-image: url("/images/background.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.techContent {
+  display: flex;
+  background-color: #EEEEEE;
+  width: 100%;
+  padding: 74px 0px;
+
+
+  > div {
+    display: flex;
+    padding: 0 40px;
+  }
+
+  ul {
+    max-width: 450px;
+    width: 100%;
+    text-transform: uppercase;
+
+    & > li {
+      font-size: 24px;
+      padding: 5px;
+      & > span {
+        font-weight: bold;
+      }
+
+      & > ul {
+        margin-top: 10px;
+        margin-left: 15px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #555;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+}
+
+.content {
+  h1 {
+    font-size: 32px;
+  } 
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  h1, h2 {
+    text-transform: uppercase;
+  }
+
+  font-size: 18px;
+  overflow-y: auto;
+  max-height: 330px;
+
+  p {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  hgroup {
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #000000;
+    font-weight: 600;
+    text-align: right;
+
+    &:active {
+      background-color: #fff;
+    }
+
+    
+  }
+
+  section {
+    margin-bottom: 50px;
+  }
+
+
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.socialIcons {
+  margin-top: 40px;
+
+  ul {
+    display: flex;
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 100px;
+      img {
+        width: 50px;
+      }
+    }
+  }
+}
+
+.contactForm {
+  display: flex;
+  justify-content: center;
+
+  form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    > div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      display: none;
+    }
+    input, textarea {
+      margin: 6px 0;
+      padding: 8px;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  padding: 20px 20px;
+  background-color: #eee;
+
+  justify-content: flex-end;
+
+  > div {
+    justify-content: right;
+  }
+
+  a {
+    text-decoration: none;
+    color: #222;
+  }
 }

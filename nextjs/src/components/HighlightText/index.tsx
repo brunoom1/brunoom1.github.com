@@ -11,7 +11,7 @@ export const HighlightText = () => {
     styles.container,
     robotoCondensed.className
   ].join(' ')}>
-    O impulso do seu negócio é tech. <br />
-    E tech está no nosso coração.
+    Software develop fullstack
+    
   </div>
 }

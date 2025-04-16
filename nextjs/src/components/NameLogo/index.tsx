@@ -17,8 +17,5 @@ export const NameLogo = () => {
     <div className={styles.name + ' ' + robotBold.className}>
       Gabriel Mendonça
     </div>
-    <div className={styles.description + ' ' + robotoFlex.className }>
-      software engine - fullstack web develop
-    </div>
   </div>
 }
