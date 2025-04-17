@@ -11,6 +11,10 @@ const robotoCondensed = Roboto_Condensed({
 
 export const Menu = () => {
 
+  const isLocation = typeof(location) !== 'undefined';
+  if (!isLocation) {
+    return;
+  }
   const pname = location.pathname + location.hash;
 
   console.log('path:', pname)
