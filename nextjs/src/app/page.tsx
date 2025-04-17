@@ -1,3 +1,7 @@
+'use client'
+import { FormEventHandler, Suspense, useEffect, useState } from "react";
+import Swal from "sweetalert2";
+
 import { Container } from "@/components/Container";
 import { HighlightText } from "@/components/HighlightText";
 
@@ -6,6 +10,50 @@ import { Button } from "@/components/Button";
 import { Title } from "@/components/Title";
 
 export default function Home() {
+
+  const [formInfo, setFormInfo] = useState({
+    sended: false,
+    sending: false,
+    error: false
+  });
+
+  const sendForm: FormEventHandler<HTMLFormElement> = (formEvent) => {
+    formEvent.preventDefault();
+    const form = formEvent?.currentTarget;
+
+    if (form) {
+      setFormInfo({ error: false, sended: false, sending: false });
+      fetch('/api/contact', {
+        body: new FormData(form),
+        method: 'POST'
+      }).then(result => {
+        setFormInfo({ error: false, sended: true, sending: false })
+      }).catch(err => {
+        setFormInfo({ error: true, sended: true, sending: false })
+      })
+    }
+  }
+
+  useEffect(() => {
+    if (!formInfo.sended) {
+      return;
+    }
+
+    if (formInfo.error) {
+      Swal.fire({
+        icon: 'error',
+        title: "Opsss...",
+        text: "Houve um erro ao tentar enviar sua mensagem!"
+      });
+    } else {
+      Swal.fire({
+        title: "Sucesso!",
+        text: "Sua mensagem foi enviado com sucesso. Em breve entrarei em contato!"
+      });
+    }
+
+  }, [formInfo.sended])
+
   return <>
     <div className={ styles.container }>
       
@@ -122,27 +170,34 @@ export default function Home() {
 
       <section>
         <div className={ styles.contactForm }>
-          <form>
-            <div>
-              <label htmlFor="name">Seu nome: </label>
-              <input type="text" name="name" placeholder="Seu nome: " required />
-            </div>
+          <Suspense fallback={<> Carregando ... </>}>
+            <form onSubmit={ sendForm }>
+              <div>
+                <label htmlFor="name">Seu nome: </label>
+                <input type="text" name="name" placeholder="Seu nome: " required />
+              </div>
 
-            <div>
-              <label htmlFor="name">Seu e-mail: </label>
-              <input type="text" name="email" placeholder="Seu e-mail" required />
-            </div>
+              <div>
+                <label htmlFor="email">Seu e-mail: </label>
+                <input type="text" name="email" placeholder="Seu e-mail" required />
+              </div>
 
-            <div>
-              <label htmlFor="name">Fale conosco: </label>
-              <textarea name="name" placeholder="Deixe uma mensagem" required></textarea>
-            </div>
+              <div>
+                <label htmlFor="cellphone">Seu celular: </label>
+                <input type="text" name="cellphone" placeholder="Seu celular" required />
+              </div>
 
-            <div>
-              <Button> Fale agora </Button>
-            </div>
+              <div>
+                <label htmlFor="message">Fale conosco: </label>
+                <textarea name="message" placeholder="Deixe uma mensagem" required></textarea>
+              </div>
 
-          </form>
+              <div>
+                <Button> Fale agora </Button>
+              </div>
+
+            </form>            
+          </Suspense>
         </div>
       </section>
 
