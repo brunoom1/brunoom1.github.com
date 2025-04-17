@@ -1,4 +1,13 @@
 
+.active {
+  background-color: black;
+  color: white !important;
+
+  &:hover {
+    background-color: #555 !important;
+  }
+}
+
 .container {
   a {
     font-size: 20px;
@@ -11,10 +20,6 @@
       background-color: #eee;
     }
 
-    &:last-child {
-      background-color: black;
-      color: white;
-    }
   }
   display: flex;
   justify-content: space-between;

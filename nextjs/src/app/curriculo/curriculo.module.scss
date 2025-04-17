@@ -1,0 +1,28 @@
+
+.container {
+
+  padding: 40px !important;
+  padding-top: 60px;
+  margin: 0 auto;
+  
+
+  section {
+    h1 {
+      font-size: 2rem;
+      padding-bottom: 3rem;
+    } 
+    h2 {
+      font-size: 1.4rem;
+      padding-bottom: .5rem;
+    }
+
+    strong {
+      display: inline-block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    margin-bottom: 20px;
+  }
+
+}

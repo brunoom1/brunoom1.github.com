@@ -2,7 +2,10 @@
 
 import { useEffect, useState } from 'react'
 import { parse } from "yaml";
-import { Container, Row, Card, CardBody } from "react-bootstrap";
+import { Row, Card, CardBody } from "react-bootstrap";
+
+import styles from "./curriculo.module.scss";
+import { Container } from '@/components/Container';
 
 const Curriculo = () => {
 
@@ -17,7 +20,7 @@ const Curriculo = () => {
   }, []);
 
   return (
-    <Container style={{padding: '60px'}} className={"curriculo"}>
+    <Container className={ styles.container }>
       { curriculoData && <Row style={{marginTop: 100}} >
         <Card>
           <CardBody style={{textAlign: 'left'}}>

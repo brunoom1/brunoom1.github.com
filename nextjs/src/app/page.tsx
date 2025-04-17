@@ -1,4 +1,5 @@
 'use client'
+
 import { FormEventHandler, Suspense, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
@@ -65,7 +66,11 @@ export default function Home() {
         <div>
           APPLICATIVOS, SOFTWARES, WEB SITES
         </div>
-        <Button> Entre em contato </Button>
+        <Button onClick={() => {
+          const clientTop = document.getElementById("section-form")?.getBoundingClientRect().y || 0;
+          window.scrollTo({behavior: 'smooth', top: clientTop - 80});
+
+        }}> Entre em contato </Button>
       </div>
 
       <section className={ styles.techSection }>
@@ -141,7 +146,7 @@ export default function Home() {
         </div> */}
       </section>
 
-      <section>
+      <section id="section-form">
         <Container className={ styles.contact }>
           <Title> Contato </Title>
 
