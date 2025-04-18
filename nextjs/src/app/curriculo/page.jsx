@@ -9,7 +9,8 @@ import { Container } from '@/components/Container';
 
 const Curriculo = () => {
 
-  const curriculoYaml = 'https://raw.githubusercontent.com/brunoom1/curriculo/master/curriculo.yaml';
+  const curriculoYaml = 'https://raw.githubusercontent.com/brunoom1/curriculo/refs/heads/master/curriculo.yaml';
+  
   const [curriculoData, setCurriculoData] = useState(null);
 
   useEffect(() => {
