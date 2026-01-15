@@ -36,14 +36,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.16.0'
-      - run: npm install -g yarn
-      - run: cd nextjs && yarn
-      - run: cd nextjs && yarn build
+      - run: cd novoSite && npx parcel build index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './nextjs/dist'
+          path: './novoSite/dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4.0.5

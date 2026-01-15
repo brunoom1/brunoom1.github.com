@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gabriel Mendonça - Desenvolvedor Fullstack. Criação de Aplicativos, Softwares e Web Sites.">
+    <title>Gabriel Mendonça | Desenvolvedor Fullstack</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Configuração do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: '#2563eb', // Azul Royal mais forte para contraste no branco
+                            hover: '#1d4ed8',
+                            light: '#dbeafe', // Azul muito claro para fundos sutis
+                        },
+                        bg: {
+                            main: '#f8fafc', // Slate 50 (Quase branco)
+                            secondary: '#ffffff', // Branco puro
+                            card: '#ffffff', // Branco puro
+                        },
+                        text: {
+                            main: '#475569', // Slate 600 (Cinza médio para texto)
+                            title: '#0f172a', // Slate 900 (Preto suave para títulos)
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 25px -5px rgba(37, 99, 235, 0.15)', // Sombra azulada suave
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Ajustes finos de scrollbar para tema claro */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="bg-bg-main text-text-main font-sans antialiased overflow-x-hidden selection:bg-brand selection:text-white">
+
+    <!-- NAV BAR -->
+    <nav class="fixed w-full z-50 top-0 left-0 bg-white/80 backdrop-blur-lg border-b border-slate-200 transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-xl font-bold text-text-title tracking-tight hover:text-brand transition-colors">
+                Gabriel Mendonça<span class="text-brand"></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#servicos" class="hover:text-brand transition-colors">O que faço</a>
+                <a href="portfolio.html" class="hover:text-brand transition-colors">Portfólio</a>
+                <a href="projetos.html" class="hover:text-brand transition-colors">GitHub</a>
+                <a href="#sobre" class="hover:text-brand transition-colors">Sobre</a>
+                <a href="#contato" class="px-5 py-2.5 bg-brand hover:bg-brand-hover text-white rounded-lg transition-all shadow-lg shadow-brand/20 hover:shadow-brand/30">
+                    Fale Comigo
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-700 text-2xl p-2 hover:bg-slate-100 rounded-lg transition-colors">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-200 py-6 px-6 flex flex-col gap-4 shadow-xl">
+            <a href="#servicos" class="text-lg font-medium text-slate-700 hover:text-brand transition-colors mobile-link">O que faço</a>
+            <a href="portfolio.html" class="text-lg font-medium text-slate-700 hover:text-brand transition-colors mobile-link">Portfólio</a>
+            <a href="projetos.html" class="text-lg font-medium text-slate-700 hover:text-brand transition-colors mobile-link">GitHub</a>
+            <a href="#sobre" class="text-lg font-medium text-slate-700 hover:text-brand transition-colors mobile-link">Sobre</a>
+            <a href="#contato" class="text-lg font-medium text-brand mobile-link">Fale Comigo</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-bg-main">
+        <!-- Background Elements (Sutis) -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-3xl -z-10 animate-pulse"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-100/50 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 mb-8 text-xs font-bold tracking-widest text-brand uppercase bg-blue-50 rounded-full border border-blue-100 animate-fade-in-up">
+                <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
+                Disponível para Freelance
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 mb-6 tracking-tight leading-tight">
+                Software Developer <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-cyan-500">Fullstack</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Especialista em criar soluções digitais robustas. Transformo sua ideia em <span class="text-slate-800 font-semibold">Aplicativos, Softwares e Web Sites</span> modernos e escaláveis.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#contato" class="w-full sm:w-auto px-8 py-4 bg-brand hover:bg-brand-hover text-white font-semibold rounded-lg transition-all shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transform hover:-translate-y-1">
+                    Solicitar Orçamento
+                </a>
+                <a href="#projetos" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 font-medium rounded-lg transition-all border border-slate-200 hover:border-slate-300 shadow-sm">
+                    Ver Portfólio
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+            <i class="ph ph-caret-down text-slate-400 text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- TECH STACK STRIP -->
+    <section class="py-10 border-y border-slate-200 bg-white relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-center text-xs text-slate-400 uppercase tracking-[0.2em] mb-8 font-semibold">Stack Tecnológico</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+                <!-- Ícones -->
+                <i class="ph ph-file-js text-4xl md:text-5xl text-slate-400 hover:text-[#F7DF1E] transition-colors" title="JavaScript"></i>
+                <i class="ph ph-file-ts text-4xl md:text-5xl text-slate-400 hover:text-[#3178C6] transition-colors" title="TypeScript"></i>
+                <i class="ph ph-atom text-4xl md:text-5xl text-slate-400 hover:text-[#61DAFB] transition-colors" title="React / React Native"></i>
+                <i class="ph ph-database text-4xl md:text-5xl text-slate-400 hover:text-[#339933] transition-colors" title="Node.js"></i>
+                <i class="ph ph-code text-4xl md:text-5xl text-slate-400 hover:text-[#E34F26] transition-colors" title="HTML & CSS"></i>
+                <i class="ph ph-git-branch text-4xl md:text-5xl text-slate-400 hover:text-[#F05032] transition-colors" title="Git"></i>
+                <i class="ph ph-cloud-arrow-up text-4xl md:text-5xl text-slate-400 hover:text-[#FFCA28] transition-colors" title="Firebase/Cloud"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-20 px-6 bg-slate-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Como posso ajudar?</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Soluções completas para levar seu negócio para o ambiente digital com excelência.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Serviço 1 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-soft hover:shadow-hover hover:border-blue-100 transition-all group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-brand mb-6 group-hover:bg-brand group-hover:text-white transition-all">
+                        <i class="ph ph-desktop text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Sites Institucionais</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Sites rápidos, otimizados para SEO e responsivos. A primeira impressão perfeita para sua empresa.
+                    </p>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-soft hover:shadow-hover hover:border-purple-100 transition-all group">
+                    <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 mb-6 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                        <i class="ph ph-code text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Sistemas Web</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Dashboards, CRMs e plataformas SaaS. Automação e controle para processos complexos.
+                    </p>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-soft hover:shadow-hover hover:border-green-100 transition-all group">
+                    <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-green-600 mb-6 group-hover:bg-green-600 group-hover:text-white transition-all">
+                        <i class="ph ph-device-mobile text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Aplicativos Mobile</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Apps para Android e iOS usando tecnologias modernas para garantir alta performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="py-24 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <span class="text-brand font-semibold text-sm tracking-wider uppercase">Portfólio</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2">Trabalhos Recentes</h2>
+                </div>
+                <a href="https://github.com/brunoom1" target="_blank" class="text-slate-500 hover:text-brand flex items-center gap-2 transition-colors font-medium">
+                    Ver GitHub <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- CARD PROJETO 1 -->
+                <article class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-brand/50 transition-all duration-300 shadow-sm hover:shadow-hover">
+                    <!-- Thumbnail Placeholder -->
+                    <div class="h-52 bg-slate-100 relative overflow-hidden flex items-center justify-center group-hover:bg-slate-50 transition-colors">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-brand/10 to-transparent opacity-50"></div>
+                        <i class="ph ph-shopping-cart text-6xl text-slate-300 group-hover:text-brand transition-colors transform group-hover:scale-110 duration-500"></i>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand transition-colors">E-commerce Platform</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-3">
+                            Plataforma de vendas completa com integração Stripe, painel administrativo e gestão de estoque em tempo real.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 text-[10px] uppercase font-bold tracking-wide bg-slate-100 text-slate-600 rounded border border-slate-200">Next.js</span>
+                            <span class="px-2 py-1 text-[10px] uppercase font-bold tracking-wide bg-slate-100 text-slate-600 rounded border border-slate-200">Tailwind</span>
+                        </div>
+                        
+                        <div class="flex gap-4 pt-4 border-t border-slate-100">
+                            <a href="#" class="flex items-center gap-2 text-sm text-slate-600 hover:text-brand transition-colors font-medium">
+                                <i class="ph ph-github-logo text-lg"></i> Código
+                            </a>
+                            <a href="#" class="flex items-center gap-2 text-sm text-slate-600 hover:text-brand transition-colors font-medium">
+                                <i class="ph ph-arrow-square-out text-lg"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD PROJETO 2 -->
+                <article class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-brand/50 transition-all duration-300 shadow-sm hover:shadow-hover">
+                    <div class="h-52 bg-slate-100 relative overflow-hidden flex items-center justify-center group-hover:bg-slate-50 transition-colors">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-transparent opacity-50"></div>
+                        <i class="ph ph-chart-bar text-6xl text-slate-300 group-hover:text-purple-500 transition-colors transform group-hover:scale-110 duration-500"></i>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand transition-colors">Dashboard Financeiro</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-3">
+                            Sistema SaaS para controle financeiro empresarial com gráficos interativos e exportação de relatórios PDF.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 text-[10px] uppercase font-bold tracking-wide bg-slate-100 text-slate-600 rounded border border-slate-200">React</span>
+                            <span class="px-2 py-1 text-[10px] uppercase font-bold tracking-wide bg-slate-100 text-slate-600 rounded border border-slate-200">Node.js</span>
+                        </div>
+                        
+                        <div class="flex gap-4 pt-4 border-t border-slate-100">
+                            <a href="#" class="flex items-center gap-2 text-sm text-slate-600 hover:text-brand transition-colors font-medium">
+                                <i class="ph ph-github-logo text-lg"></i> Código
+                            </a>
+                            <a href="#" class="flex items-center gap-2 text-sm text-slate-600 hover:text-brand transition-colors font-medium">
+                                <i class="ph ph-arrow-square-out text-lg"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD PROJETO 3 -->
+                <article class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-brand/50 transition-all duration-300 shadow-sm hover:shadow-hover">
+                    <div class="h-52 bg-slate-100 relative overflow-hidden flex items-center justify-center group-hover:bg-slate-50 transition-colors">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-green-500/10 to-transparent opacity-50"></div>
+                        <i class="ph ph-map-pin text-6xl text-slate-300 group-hover:text-green-500 transition-colors transform group-hover:scale-110 duration-500"></i>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand transition-colors">Delivery App</h3>
+                        <p class="text-sm text-slate-500 mb-4 line-clamp-3">
+                            Aplicativo de entregas com geolocalização em tempo real e sistema de notificações push.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2 py-1 text-[10px] uppercase font-bold tracking-wide bg-slate-100 text-slate-600 rounded border border-slate-200">React Native</span>
+                            <span class="px-2 py-1 text-[10px] uppercase font-bold tracking-wide bg-slate-100 text-slate-600 rounded border border-slate-200">Firebase</span>
+                        </div>
+                        
+                        <div class="flex gap-4 pt-4 border-t border-slate-100">
+                            <a href="#" class="flex items-center gap-2 text-sm text-slate-600 hover:text-brand transition-colors font-medium">
+                                <i class="ph ph-github-logo text-lg"></i> Código
+                            </a>
+                            <a href="#" class="flex items-center gap-2 text-sm text-slate-600 hover:text-brand transition-colors font-medium">
+                                <i class="ph ph-arrow-square-out text-lg"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE (Estilo Clean) -->
+    <section id="sobre" class="py-20 px-6 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-center">
+            <div class="w-32 h-32 md:w-48 md:h-48 rounded-full bg-white flex-shrink-0 border-4 border-white shadow-lg overflow-hidden relative">
+                <!-- Foto Placeholder -->
+                <i class="ph ph-user text-6xl md:text-8xl absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-slate-300"></i>
+            </div>
+            
+            <div class="flex-1 text-center md:text-left">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Quem é Gabriel?</h2>
+                <div class="space-y-4 text-slate-600 text-lg leading-relaxed">
+                    <p>
+                        Sou um desenvolvedor apaixonado por resolver problemas reais. Minha jornada começou com a curiosidade de entender como as coisas funcionam, e hoje dedico meu tempo a construir soluções que facilitam a vida de pessoas e empresas.
+                    </p>
+                    <p>
+                        Com foco em <strong class="text-slate-900">qualidade de código, performance e experiência do usuário</strong>, atuo como parceiro técnico dos meus clientes, não apenas como um executor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="py-24 px-6 relative overflow-hidden bg-white">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16">
+            <!-- Coluna Infos -->
+            <div>
+                <span class="text-brand font-semibold text-sm tracking-wider uppercase">Contato</span>
+                <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-6">Vamos tirar seu projeto do papel?</h2>
+                <p class="text-slate-500 text-lg mb-10">
+                    Estou disponível para novos projetos. Me conte sobre sua ideia e eu retornarei com uma proposta técnica.
+                </p>
+                
+                <div class="space-y-6">
+                    <a href="https://api.whatsapp.com/send/?phone=5511953884206&text&type=phone_number&app_absent=1" target="_blank" class="flex items-center gap-5 p-5 bg-white rounded-xl border border-slate-200 hover:border-green-500 hover:bg-green-50 transition-all group shadow-sm hover:shadow-md">
+                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="ph ph-whatsapp-logo text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-500 mb-0.5">WhatsApp</p>
+                            <p class="font-bold text-slate-900 text-lg">Enviar Mensagem</p>
+                        </div>
+                    </a>
+
+                    <a href="mailto:contato@gabrielmendonca.com.br" class="flex items-center gap-5 p-5 bg-white rounded-xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50 transition-all group shadow-sm hover:shadow-md">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="ph ph-envelope-simple text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-500 mb-0.5">E-mail</p>
+                            <p class="font-bold text-slate-900 text-lg">contato@gabrielmendonca.com.br</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="flex gap-4 mt-10">
+                    <a href="#" class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-white hover:bg-brand transition-all">
+                        <i class="ph ph-linkedin-logo text-2xl"></i>
+                    </a>
+                    <a href="https://github.com/brunoom1" target="_blank" class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-white hover:bg-brand transition-all">
+                        <i class="ph ph-github-logo text-2xl"></i>
+                    </a>
+                    <a href="#" class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 hover:text-white hover:bg-brand transition-all">
+                        <i class="ph ph-instagram-logo text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Coluna Formulário -->
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-xl shadow-slate-200/50">
+                <form action="https://formsubmit.co/SEU_EMAIL_AQUI" method="POST" class="space-y-5">
+                    <!-- Anti-spam honeypot (oculto) -->
+                    <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Nome</label>
+                        <input type="text" name="name" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all" placeholder="Seu nome completo" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">E-mail</label>
+                        <input type="email" name="email" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all" placeholder="voce@empresa.com" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Mensagem</label>
+                        <textarea name="message" rows="4" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all" placeholder="Gostaria de um orçamento para..." required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand hover:bg-brand-hover text-white font-bold py-4 rounded-lg transition-all transform hover:-translate-y-1 shadow-lg shadow-blue-500/20">
+                        Enviar Mensagem
+                    </button>
+                    <p class="text-xs text-center text-slate-500 mt-4">Responderei em até 24 horas.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-slate-50 border-t border-slate-200 text-center">
+        <p class="text-slate-500 text-sm">
+            &copy; <span id="year"></span> Gabriel Mendonça. Feito com <i class="ph-fill ph-heart text-red-500 align-middle"></i> e muito café.
+        </p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Atualizar ano automaticamente
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Menu Mobile Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fechar menu ao clicar em um link
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Efeito de Navbar ao rolar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md', 'bg-white/95');
+                nav.classList.remove('bg-white/80');
+            } else {
+                nav.classList.remove('shadow-md', 'bg-white/95');
+                nav.classList.add('bg-white/80');
+            }
+        });
+    </script>
+</body>
+</html>
