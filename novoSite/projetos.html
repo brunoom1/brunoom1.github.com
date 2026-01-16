@@ -17,7 +17,7 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- Configuração do Tailwind -->
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -59,17 +59,8 @@
 </head>
 <body class="bg-bg-main text-text-main font-sans antialiased overflow-x-hidden selection:bg-brand selection:text-white">
 
-    <!-- NAV BAR -->
-    <nav class="fixed w-full z-50 top-0 left-0 bg-white/80 backdrop-blur-lg border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-bold text-text-title tracking-tight hover:text-brand transition-colors">
-                Gabriel Mendonça
-            </a>
-            <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-brand transition-colors flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-slate-100">
-                <i class="ph ph-arrow-left"></i> Voltar ao Início
-            </a>
-        </div>
-    </nav>
+    <!-- Navigation Container -->
+    <nav id="app-navbar"></nav>
 
     <!-- HEADER -->
     <section class="pt-32 pb-12 px-6 bg-white border-b border-slate-200">
@@ -99,96 +90,9 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-8 bg-white border-t border-slate-200 text-center">
-        <p class="text-slate-500 text-sm">
-            &copy; <span id="year"></span> Gabriel Mendonça. Dados fornecidos pela GitHub API.
-        </p>
-    </footer>
+    <footer id="app-footer"></footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        async function fetchRepos() {
-            const username = 'brunoom1';
-            const container = document.getElementById('repos-container');
-            
-            try {
-                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc&per_page=100`);
-                if (!response.ok) throw new Error('Falha ao carregar repositórios');
-                
-                const repos = await response.json();
-                
-                container.innerHTML = ''; // Limpar loading
-
-                if (repos.length === 0) {
-                    container.innerHTML = '<p class="col-span-full text-center text-slate-500">Nenhum repositório público encontrado.</p>';
-                    return;
-                }
-
-                repos.forEach(repo => {
-                    if (!repo.description) return;
-
-                    const card = document.createElement('article');
-                    card.className = 'bg-white rounded-xl border border-slate-200 p-6 hover:border-brand/50 hover:shadow-hover transition-all flex flex-col h-full group';
-                    
-                    const description = repo.description || 'Sem descrição fornecida.';
-                    const language = repo.language || 'Code';
-                    const updatedDate = new Date(repo.updated_at).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
-
-                    card.innerHTML = `
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="p-3 bg-blue-50 text-brand rounded-lg group-hover:bg-brand group-hover:text-white transition-colors">
-                                <i class="ph ${repo.fork ? 'ph-git-fork' : 'ph-git-repository'} text-2xl"></i>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="flex items-center gap-1 text-xs font-medium text-slate-400 bg-slate-50 px-2 py-1 rounded" title="Stars">
-                                    <i class="ph ph-star-fill text-yellow-400"></i> ${repo.stargazers_count}
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-brand transition-colors truncate" title="${repo.name}">
-                            ${repo.name}
-                        </h3>
-                        
-                        <p class="text-sm text-slate-500 mb-6 flex-grow line-clamp-3">
-                            ${description}
-                        </p>
-                        
-                        <div class="flex items-center justify-between pt-4 border-t border-slate-100 mt-auto">
-                            <div class="flex items-center gap-3">
-                                <span class="text-xs font-semibold text-slate-600 flex items-center gap-1">
-                                    <span class="w-2 h-2 rounded-full bg-brand"></span> ${language}
-                                </span>
-                                <span class="text-[10px] text-slate-400" title="Última atualização">
-                                    ${updatedDate}
-                                </span>
-                            </div>
-                            <a href="${repo.html_url}" target="_blank" class="text-sm font-medium text-brand hover:text-brand-hover flex items-center gap-1">
-                                Ver <i class="ph ph-arrow-right"></i>
-                            </a>
-                        </div>
-                    `;
-                    
-                    container.appendChild(card);
-                });
-
-            } catch (error) {
-                console.error(error);
-                container.innerHTML = `
-                    <div class="col-span-full text-center py-12">
-                        <p class="text-red-500 mb-2">Ops! Não foi possível carregar os projetos.</p>
-                        <p class="text-slate-400 text-sm mb-4">Verifique sua conexão ou tente novamente mais tarde.</p>
-                        <a href="https://github.com/${username}" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-brand text-white rounded-lg hover:bg-brand-hover transition-colors">
-                            <i class="ph ph-github-logo text-xl"></i>
-                            Ir para o GitHub
-                        </a>
-                    </div>
-                `;
-            }
-        }
-
-        fetchRepos();
-    </script>
+    <!-- Component Scripts -->
+    <script type="module" src="js/projetos.js"></script>
 </body>
 </html>

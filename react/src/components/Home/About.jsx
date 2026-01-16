@@ -8,8 +8,34 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import SocialLink from "./SocialLink";
 
-
+const socialLinks = [
+  {
+    href: "https://github.com/brunoom1",
+    Icon: AiFillGithub,
+    label: "GitHub",
+    ariaLabel: "github",
+  },
+  {
+    href: "https://twitter.com/brunoom1",
+    Icon: AiOutlineTwitter,
+    label: "Twitter",
+    ariaLabel: "twitter",
+  },
+  {
+    href: "https://www.linkedin.com/in/gabrielmendonca/",
+    Icon: FaLinkedinIn,
+    label: "LinkedIn",
+    ariaLabel: "linkedin",
+  },
+  {
+    href: "https://leetcode.com/gabrielmendonca/",
+    Icon: SiLeetcode,
+    label: "LeetCode",
+    ariaLabel: "leetcode",
+  },
+];
 
 const About = () => {
     return (
@@ -63,50 +89,15 @@ const About = () => {
                 Por favor, vamos nos <span className="yellow">conectar.</span>
                 </p>
                 <ul className="home-about-social-links">
-                  <li className="social-icons">
-                    <a
-                      href="https://github.com/brunoom1"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="icon-colour  home-social-icons"
-                      aria-label="github"
-                    >
-                      <AiFillGithub />
-                    </a>
-                  </li>
-                  <li className="social-icons">
-                    <a
-                      href="https://twitter.com/brunoom1"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="icon-colour  home-social-icons"
-                      aria-label="twitter"
-                    >
-                      <AiOutlineTwitter />
-                    </a>
-                  </li>
-                  <li className="social-icons">
-                    <a
-                      href="https://www.linkedin.com/in/gabrielmendonca/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="icon-colour  home-social-icons"
-                      aria-label="linkedin"
-                    >
-                      <FaLinkedinIn />
-                    </a>
-                  </li>
-                  <li className="social-icons">
-                    <a
-                      href="https://leetcode.com/gabrielmendonca/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="icon-colour home-social-icons"
-                      aria-label="instagram"
-                    >
-                      <SiLeetcode />
-                    </a>
-                  </li>
+                  {socialLinks.map((link, index) => (
+                    <SocialLink
+                      key={index}
+                      href={link.href}
+                      Icon={link.Icon}
+                      label={link.label}
+                      ariaLabel={link.ariaLabel}
+                    />
+                  ))}
                 </ul>
               </Col>
             </Row>

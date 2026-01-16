@@ -17,7 +17,7 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- Configuração do Tailwind -->
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -52,28 +52,15 @@
 </head>
 <body class="bg-bg-main text-text-main font-sans antialiased overflow-x-hidden selection:bg-brand selection:text-white">
 
-    <!-- NAV BAR -->
-    <nav class="fixed w-full z-50 top-0 left-0 bg-white/80 backdrop-blur-lg border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="index.html" class="text-xl font-bold text-text-title tracking-tight hover:text-brand transition-colors">
-                Gabriel Mendonça
-            </a>
-            <div class="flex items-center gap-6">
-                <a href="index.html" class="text-sm font-medium text-slate-600 hover:text-brand transition-colors hidden md:block">Voltar ao Início</a>
-                <a href="https://www.workana.com/freelancer/0133136e7791fdf16febd258d1f0e7c3" target="_blank" class="px-5 py-2 bg-brand hover:bg-brand-hover text-white text-sm font-bold rounded-lg transition-all shadow-lg shadow-brand/20">
-                    Contratar no Workana
-                </a>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation Container -->
+    <nav id="app-navbar"></nav>
 
     <!-- HERO PROFILE -->
     <section class="pt-32 pb-16 px-6 bg-white border-b border-slate-200">
         <div class="max-w-4xl mx-auto text-center">
             <div class="w-32 h-32 mx-auto rounded-full bg-white p-1 shadow-xl mb-6 relative group cursor-pointer">
                 <div class="w-full h-full rounded-full bg-slate-100 flex items-center justify-center overflow-hidden">
-                     <!-- Substitua pelo link da sua foto -->
-                     <i class="ph ph-user text-5xl text-slate-300"></i>
+                    <i class="ph ph-user text-5xl text-slate-300"></i>
                 </div>
                 <div class="absolute bottom-0 right-0 bg-green-500 w-8 h-8 rounded-full border-4 border-white" title="Disponível"></div>
             </div>
@@ -103,14 +90,8 @@
     <section class="py-10 px-6 bg-slate-50 border-b border-slate-200">
         <div class="max-w-4xl mx-auto text-center">
             <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Principais Competências</h3>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="px-4 py-2 bg-white text-slate-700 rounded-lg border border-slate-200 font-medium shadow-sm">JavaScript</span>
-                <span class="px-4 py-2 bg-white text-slate-700 rounded-lg border border-slate-200 font-medium shadow-sm">TypeScript</span>
-                <span class="px-4 py-2 bg-white text-slate-700 rounded-lg border border-slate-200 font-medium shadow-sm">React.js</span>
-                <span class="px-4 py-2 bg-white text-slate-700 rounded-lg border border-slate-200 font-medium shadow-sm">Node.js</span>
-                <span class="px-4 py-2 bg-white text-slate-700 rounded-lg border border-slate-200 font-medium shadow-sm">React Native</span>
-                <span class="px-4 py-2 bg-white text-slate-700 rounded-lg border border-slate-200 font-medium shadow-sm">Tailwind CSS</span>
-                <span class="px-4 py-2 bg-white text-slate-700 rounded-lg border border-slate-200 font-medium shadow-sm">Git & GitHub</span>
+            <div id="skills-container" class="flex flex-wrap justify-center gap-3">
+                <!-- Skills will be rendered here -->
             </div>
         </div>
     </section>
@@ -125,118 +106,16 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- PROJETO 1 -->
-                <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-hover transition-all group">
-                    <div class="h-52 bg-slate-100 relative overflow-hidden flex items-center justify-center text-slate-300 group-hover:bg-slate-50 transition-colors">
-                        <i class="ph ph-laptop text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Sistema de Gestão Web</h3>
-                        <p class="text-slate-500 text-sm mb-4 line-clamp-3">
-                            Desenvolvimento de plataforma SaaS para gestão empresarial, com dashboard interativo e relatórios em tempo real.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">React</span>
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">Node.js</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJETO 2 -->
-                <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-hover transition-all group">
-                    <div class="h-52 bg-slate-100 relative overflow-hidden flex items-center justify-center text-slate-300 group-hover:bg-slate-50 transition-colors">
-                        <i class="ph ph-device-mobile text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">App de Delivery</h3>
-                        <p class="text-slate-500 text-sm mb-4 line-clamp-3">
-                            Aplicativo móvel para entregas com geolocalização, pagamentos in-app e painel administrativo para o restaurante.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">React Native</span>
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">Firebase</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJETO 3 -->
-                <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-hover transition-all group">
-                    <div class="h-52 bg-slate-100 relative overflow-hidden flex items-center justify-center text-slate-300 group-hover:bg-slate-50 transition-colors">
-                        <i class="ph ph-shopping-bag text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Marketplace de Serviços</h3>
-                        <p class="text-slate-500 text-sm mb-4 line-clamp-3">
-                            Plataforma para conectar prestadores de serviços e clientes, com chat integrado e sistema de avaliações.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">TypeScript</span>
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">Next.js</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJETO 4 -->
-                <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-hover transition-all group">
-                    <div class="h-52 bg-slate-100 relative overflow-hidden flex items-center justify-center text-slate-300 group-hover:bg-slate-50 transition-colors">
-                        <i class="ph ph-map-trifold text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">App de Rastreamento</h3>
-                        <p class="text-slate-500 text-sm mb-4 line-clamp-3">
-                            Aplicativo para monitoramento de frotas em tempo real utilizando mapas interativos e geolocalização.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">React Native</span>
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">Google Maps</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJETO 5 -->
-                <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-hover transition-all group">
-                    <div class="h-52 bg-slate-100 relative overflow-hidden flex items-center justify-center text-slate-300 group-hover:bg-slate-50 transition-colors">
-                        <i class="ph ph-credit-card text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">API de Pagamentos</h3>
-                        <p class="text-slate-500 text-sm mb-4 line-clamp-3">
-                            Integração de gateway de pagamentos com sistema de assinaturas recorrentes e gestão de faturas.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">Node.js</span>
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">Express</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJETO 6 -->
-                <article class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-hover transition-all group">
-                    <div class="h-52 bg-slate-100 relative overflow-hidden flex items-center justify-center text-slate-300 group-hover:bg-slate-50 transition-colors">
-                        <i class="ph ph-browser text-6xl"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-slate-900 mb-2">Landing Page Corporativa</h3>
-                        <p class="text-slate-500 text-sm mb-4 line-clamp-3">
-                            Site institucional de alta conversão com animações suaves e otimização para motores de busca (SEO).
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">HTML5</span>
-                            <span class="text-[10px] font-bold uppercase px-2 py-1 bg-blue-50 text-brand rounded">Tailwind CSS</span>
-                        </div>
-                    </div>
-                </article>
+            <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be rendered here -->
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-8 bg-white border-t border-slate-200 text-center">
-        <p class="text-slate-500 text-sm">
-            &copy; <span id="year"></span> Gabriel Mendonça.
-        </p>
-    </footer>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <footer id="app-footer"></footer>
+
+    <!-- Component Scripts -->
+    <script type="module" src="js/portfolio.js"></script>
 </body>
 </html>
