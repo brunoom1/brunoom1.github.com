@@ -7,6 +7,7 @@ import { Navigation } from './components/Navigation.js';
 import { Hero } from './components/Hero.js';
 import { ServiceCard } from './components/ServiceCard.js';
 import { ProjectCard } from './components/ProjectCard.js';
+import { ContactForm } from './components/ContactForm.js';
 import { Footer } from './components/Footer.js';
 
 // Initialize Navigation
@@ -134,6 +135,10 @@ const footer = new Footer({
 });
 
 footer.mount('#app-footer');
+
+// Initialize Contact Form
+const contactForm = new ContactForm();
+contactForm.attachEventListeners();
 
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
