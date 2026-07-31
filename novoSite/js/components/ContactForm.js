@@ -12,7 +12,7 @@ export class ContactForm {
   }
 
   async submit(form) {
-    const button = form.querySelector('button[type="submit"]');
+    const button = document.getElementById('contact-submit') || form.querySelector('button');
     const originalText = button.innerHTML;
 
     button.disabled = true;
