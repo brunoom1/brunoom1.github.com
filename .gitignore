@@ -5,3 +5,4 @@ yarn.lock
 yarn-error.log
 build/
 novoSite/assets/projects/*.png
+novoSite/assets/foto.png
