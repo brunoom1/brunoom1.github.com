@@ -8,6 +8,7 @@ import { SkillTag } from './components/SkillTag.js';
 import { ProjectCard } from './components/ProjectCard.js';
 import { Footer } from './components/Footer.js';
 
+
 // Initialize Navigation
 const navigation = new Navigation({
   homeLink: 'index.html',
@@ -48,46 +49,52 @@ if (skillsContainer) {
 // Initialize Projects
 const projects = [
   {
-    title: 'Sistema de Gestão Web',
-    description: 'Desenvolvimento de plataforma SaaS para gestão empresarial, com dashboard interativo e relatórios em tempo real.',
-    icon: 'ph-laptop',
-    tags: ['React', 'Node.js'],
-    ghLink: '#',
+    title: 'Clínica Ágil',
+    description: 'Sistema de agendamento para clínicas com lembretes por WhatsApp, prontuário digital e gestão de agenda.',
+    icon: 'ph-first-aid-kit',
+    image: 'assets/projects/clinica-agil.webp',
+    tags: ['React', 'Node.js', 'PostgreSQL'],
+    ghLink: 'https://github.com/brunoom1',
   },
   {
-    title: 'App de Delivery',
-    description: 'Aplicativo móvel para entregas com geolocalização, pagamentos in-app e painel administrativo para o restaurante.',
-    icon: 'ph-device-mobile',
+    title: 'Fazenda Direto',
+    description: 'Marketplace de produtos rurais conectando produtores e consumidores com entrega regional e chat integrado.',
+    icon: 'ph-basket',
+    image: 'assets/projects/fazenda-direto.webp',
     tags: ['React Native', 'Firebase'],
-    ghLink: '#',
+    ghLink: 'https://github.com/brunoom1',
   },
   {
-    title: 'Marketplace de Serviços',
-    description: 'Plataforma para conectar prestadores de serviços e clientes, com chat integrado e sistema de avaliações.',
-    icon: 'ph-shopping-bag',
-    tags: ['TypeScript', 'Next.js'],
-    ghLink: '#',
+    title: 'Fitness Tracker',
+    description: 'App de treinos personalizados com planos adaptativos, acompanhamento de evolução e metas diárias.',
+    icon: 'ph-barbell',
+    image: 'assets/projects/fitness-tracker.webp',
+    tags: ['React Native', 'Node.js'],
+    ghLink: 'https://github.com/brunoom1',
   },
   {
-    title: 'App de Rastreamento',
-    description: 'Aplicativo para monitoramento de frotas em tempo real utilizando mapas interativos e geolocalização.',
-    icon: 'ph-map-trifold',
-    tags: ['React Native', 'Google Maps'],
-    ghLink: '#',
+    title: 'Recrutamento Tech',
+    description: 'Plataforma de vagas para desenvolvedores com triagem por desafios técnicos e feedback estruturado.',
+    icon: 'ph-briefcase',
+    image: 'assets/projects/recrutamento-tech.webp',
+    tags: ['Next.js', 'MongoDB'],
+    ghLink: 'https://github.com/brunoom1',
+  },
+  {
+    title: 'Bot de Atendimento',
+    description: 'Assistente de WhatsApp com respostas automáticas, qualificação de leads e transferência para humano.',
+    icon: 'ph-chats-circle',
+    image: 'assets/projects/bot-atendimento.webp',
+    tags: ['Node.js', 'WhatsApp API'],
+    ghLink: 'https://github.com/brunoom1',
   },
   {
     title: 'API de Pagamentos',
-    description: 'Integração de gateway de pagamentos com sistema de assinaturas recorrentes e gestão de faturas.',
+    description: 'Gateway de pagamentos com assinaturas recorrentes, gestão de faturas e webhooks em tempo real.',
     icon: 'ph-credit-card',
-    tags: ['Node.js', 'Express'],
-    ghLink: '#',
-  },
-  {
-    title: 'Landing Page Corporativa',
-    description: 'Site institucional de alta conversão com animações suaves e otimização para motores de busca (SEO).',
-    icon: 'ph-browser',
-    tags: ['HTML5', 'Tailwind CSS'],
-    ghLink: '#',
+    image: 'assets/projects/api-pagamentos.webp',
+    tags: ['Node.js', 'Express', 'Stripe'],
+    ghLink: 'https://github.com/brunoom1',
   },
 ];
 

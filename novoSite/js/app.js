@@ -10,6 +10,7 @@ import { ProjectCard } from './components/ProjectCard.js';
 import { ContactForm } from './components/ContactForm.js';
 import { Footer } from './components/Footer.js';
 
+
 // Initialize Navigation
 const navigation = new Navigation({
   homeLink: '#',
@@ -92,30 +93,63 @@ if (servicesContainer) {
 // Initialize Projects
 const projects = [
   {
-    title: 'E-commerce Platform',
+    title: 'Clínica Ágil',
     description:
-      'Plataforma de vendas completa com integração Stripe, painel administrativo e gestão de estoque em tempo real.',
-    icon: 'ph-shopping-cart',
-    tags: ['Next.js', 'Tailwind'],
-    ghLink: '#',
+      'Plataforma de agendamento para clínicas com lembretes automáticos por WhatsApp, prontuário digital e gestão de profissionais.',
+    icon: 'ph-first-aid-kit',
+    image: 'assets/projects/clinica-agil.webp',
+    tags: ['React', 'Node.js', 'PostgreSQL'],
+    ghLink: 'https://github.com/brunoom1',
     demoLink: '#',
   },
   {
-    title: 'Dashboard Financeiro',
+    title: 'Fazenda Direto',
     description:
-      'Sistema SaaS para controle financeiro empresarial com gráficos interativos e exportação de relatórios PDF.',
-    icon: 'ph-chart-bar',
-    tags: ['React', 'Node.js'],
-    ghLink: '#',
-    demoLink: '#',
-  },
-  {
-    title: 'Delivery App',
-    description:
-      'Aplicativo de entregas com geolocalização em tempo real e sistema de notificações push.',
-    icon: 'ph-map-pin',
+      'Marketplace que conecta produtores rurais a consumidores, com logística de entrega regional e pagamento integrado.',
+    icon: 'ph-basket',
+    image: 'assets/projects/fazenda-direto.webp',
     tags: ['React Native', 'Firebase'],
-    ghLink: '#',
+    ghLink: 'https://github.com/brunoom1',
+    demoLink: '#',
+  },
+  {
+    title: 'Fitness Tracker',
+    description:
+      'Aplicativo de treinos personalizados com planos adaptativos, acompanhamento de evolução e metas diárias.',
+    icon: 'ph-barbell',
+    image: 'assets/projects/fitness-tracker.webp',
+    tags: ['React Native', 'Node.js'],
+    ghLink: 'https://github.com/brunoom1',
+    demoLink: '#',
+  },
+  {
+    title: 'Recrutamento Tech',
+    description:
+      'Plataforma de vagas para devs com triagem automática por desafios técnicos, ranking de candidatos e feedback estruturado.',
+    icon: 'ph-briefcase',
+    image: 'assets/projects/recrutamento-tech.webp',
+    tags: ['Next.js', 'MongoDB'],
+    ghLink: 'https://github.com/brunoom1',
+    demoLink: '#',
+  },
+  {
+    title: 'Bot de Atendimento',
+    description:
+      'Assistente de WhatsApp com respostas automáticas, qualificação de leads e transferência inteligente para atendimento humano.',
+    icon: 'ph-chats-circle',
+    image: 'assets/projects/bot-atendimento.webp',
+    tags: ['Node.js', 'WhatsApp API'],
+    ghLink: 'https://github.com/brunoom1',
+    demoLink: '#',
+  },
+  {
+    title: 'API de Pagamentos',
+    description:
+      'Gateway de pagamentos com assinaturas recorrentes, gestão de faturas, webhooks e painel administrativo em tempo real.',
+    icon: 'ph-credit-card',
+    image: 'assets/projects/api-pagamentos.webp',
+    tags: ['Node.js', 'Express', 'Stripe'],
+    ghLink: 'https://github.com/brunoom1',
     demoLink: '#',
   },
 ];

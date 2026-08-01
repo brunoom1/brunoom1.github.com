@@ -36,7 +36,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '24.18.1'
-      - run: cd novoSite && npx parcel build index.html portfolio.html projetos.html
+      - run: cd novoSite && npx parcel build index.html portfolio.html projetos.html && cp -r assets dist/assets
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

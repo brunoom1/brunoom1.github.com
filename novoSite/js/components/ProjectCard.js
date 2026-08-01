@@ -8,6 +8,7 @@ export class ProjectCard {
     this.title = options.title || 'Título do Projeto';
     this.description = options.description || 'Descrição do projeto';
     this.icon = options.icon || 'ph-laptop';
+    this.image = options.image || null;
     this.tags = options.tags || [];
     this.ghLink = options.ghLink || '#';
     this.demoLink = options.demoLink || null;
@@ -20,12 +21,16 @@ export class ProjectCard {
         </a>`
       : '';
 
+    const thumbnail = this.image
+      ? `<img src="${this.image}" alt="${this.title}" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">`
+      : `<i class="ph ${this.icon} text-6xl text-slate-300 group-hover:text-brand transition-colors transform group-hover:scale-110 duration-500"></i>`;
+
     return `
       <article class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-brand/50 transition-all duration-300 shadow-sm hover:shadow-hover">
-        <!-- Thumbnail Placeholder -->
+        <!-- Thumbnail -->
         <div class="h-52 bg-slate-100 relative overflow-hidden flex items-center justify-center group-hover:bg-slate-50 transition-colors">
           <div class="absolute inset-0 bg-gradient-to-tr from-brand/10 to-transparent opacity-50"></div>
-          <i class="ph ${this.icon} text-6xl text-slate-300 group-hover:text-brand transition-colors transform group-hover:scale-110 duration-500"></i>
+          ${thumbnail}
         </div>
         
         <div class="p-6">
