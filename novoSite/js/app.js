@@ -99,8 +99,6 @@ const projects = [
     icon: 'ph-first-aid-kit',
     image: 'assets/projects/clinica-agil.webp',
     tags: ['React', 'Node.js', 'PostgreSQL'],
-    ghLink: 'https://github.com/brunoom1',
-    demoLink: '#',
   },
   {
     title: 'Fazenda Direto',
@@ -109,8 +107,6 @@ const projects = [
     icon: 'ph-basket',
     image: 'assets/projects/fazenda-direto.webp',
     tags: ['React Native', 'Firebase'],
-    ghLink: 'https://github.com/brunoom1',
-    demoLink: '#',
   },
   {
     title: 'Fitness Tracker',
@@ -119,8 +115,6 @@ const projects = [
     icon: 'ph-barbell',
     image: 'assets/projects/fitness-tracker.webp',
     tags: ['React Native', 'Node.js'],
-    ghLink: 'https://github.com/brunoom1',
-    demoLink: '#',
   },
   {
     title: 'Recrutamento Tech',
@@ -129,8 +123,6 @@ const projects = [
     icon: 'ph-briefcase',
     image: 'assets/projects/recrutamento-tech.webp',
     tags: ['Next.js', 'MongoDB'],
-    ghLink: 'https://github.com/brunoom1',
-    demoLink: '#',
   },
   {
     title: 'Bot de Atendimento',
@@ -139,8 +131,6 @@ const projects = [
     icon: 'ph-chats-circle',
     image: 'assets/projects/bot-atendimento.webp',
     tags: ['Node.js', 'WhatsApp API'],
-    ghLink: 'https://github.com/brunoom1',
-    demoLink: '#',
   },
   {
     title: 'API de Pagamentos',
@@ -149,8 +139,6 @@ const projects = [
     icon: 'ph-credit-card',
     image: 'assets/projects/api-pagamentos.webp',
     tags: ['Node.js', 'Express', 'Stripe'],
-    ghLink: 'https://github.com/brunoom1',
-    demoLink: '#',
   },
 ];
 

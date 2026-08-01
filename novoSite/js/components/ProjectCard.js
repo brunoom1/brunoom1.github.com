@@ -10,17 +10,9 @@ export class ProjectCard {
     this.icon = options.icon || 'ph-laptop';
     this.image = options.image || null;
     this.tags = options.tags || [];
-    this.ghLink = options.ghLink || '#';
-    this.demoLink = options.demoLink || null;
   }
 
   render() {
-    const demoButton = this.demoLink
-      ? `<a href="${this.demoLink}" target="_blank" class="flex items-center gap-2 text-sm text-slate-600 hover:text-brand transition-colors font-medium">
-          <i class="ph ph-globe text-lg"></i> Demo
-        </a>`
-      : '';
-
     const thumbnail = this.image
       ? `<img src="${this.image}" alt="${this.title}" loading="lazy" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">`
       : `<i class="ph ${this.icon} text-6xl text-slate-300 group-hover:text-brand transition-colors transform group-hover:scale-110 duration-500"></i>`;
@@ -39,15 +31,8 @@ export class ProjectCard {
             ${this.description}
           </p>
           
-          <div class="flex flex-wrap gap-2 mb-6">
+          <div class="flex flex-wrap gap-2 mb-2">
             ${this.tags.map((tag) => `<span class="px-2 py-1 text-[10px] uppercase font-bold tracking-wide bg-slate-100 text-slate-600 rounded border border-slate-200">${tag}</span>`).join('')}
-          </div>
-          
-          <div class="flex gap-4 pt-4 border-t border-slate-100">
-            <a href="${this.ghLink}" target="_blank" class="flex items-center gap-2 text-sm text-slate-600 hover:text-brand transition-colors font-medium">
-              <i class="ph ph-github-logo text-lg"></i> Código
-            </a>
-            ${demoButton}
           </div>
         </div>
       </article>
