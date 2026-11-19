@@ -6,7 +6,7 @@
 export class ContactForm {
   constructor(options = {}) {
     this.options = {
-      endpoint: 'https://gabrielmendonca.com.br/api/contact',
+      endpoint: 'https://api.gabrielmendonca.com.br/contact',
       ...options,
     };
   }

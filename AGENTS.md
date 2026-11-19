@@ -86,7 +86,7 @@ export class Hero {
 - **E-mail:** `contato@gabrielmendonca.com.br`
 - **GitHub:** usuário `brunoom1` — também usado em `js/projetos.js` na API
 - **Workana:** link de freelancer usado em `js/portfolio.js` (feature)
-- **Formulário de contato:** usa [formsubmit.co](https://formsubmit.co) com `action="https://formsubmit.co/SEU_EMAIL_AQUI"` — ⚠️ ainda contém o placeholder `SEU_EMAIL_AQUI`; para o e-mail chegar, precisa trocar pelo e-mail real
+- **Formulário de contato:** envia para `https://api.gabrielmendonca.com.br/contact` via fetch no `js/components/ContactForm.js` (com fallback no `action` do form em `index.html`)
 
 ## Git
 
